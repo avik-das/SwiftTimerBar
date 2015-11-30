@@ -48,14 +48,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-    func getElapsedTimeDisplay() -> String {
-        let elapsedTime  = lround(timer.elapsedSeconds)
-        let minutes = elapsedTime / 60
-        let seconds = elapsedTime % 60
-
-        return String(format: "%02d:%02d", minutes, seconds)
-    }
-
     func titleString(text: String) -> NSAttributedString {
         let string = NSMutableAttributedString()
         string.appendAttributedString(iconTextPadding)
@@ -69,7 +61,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func rerender() {
-        statusBarItem.button?.attributedTitle = titleString(getElapsedTimeDisplay())
+        statusBarItem.button?.attributedTitle = titleString(TBTimeDisplay.display(timer.elapsedSeconds))
 
         switch (timer.status) {
         case .Stopped:

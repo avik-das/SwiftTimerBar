@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		87C882981C0BEAEA0083B8E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882971C0BEAEA0083B8E3 /* AppDelegate.swift */; };
 		87C8829A1C0BEAEA0083B8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C882991C0BEAEA0083B8E3 /* Assets.xcassets */; };
-		87C882A81C0BEAEA0083B8E3 /* TimerBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882A71C0BEAEA0083B8E3 /* TimerBarTests.swift */; };
 		87C882B31C0BEAEA0083B8E3 /* TimerBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882B21C0BEAEA0083B8E3 /* TimerBarUITests.swift */; };
 		87C882C21C0BEE220083B8E3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C882C01C0BEE220083B8E3 /* MainMenu.xib */; };
 		87C882C41C0C145F0083B8E3 /* TBTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882C31C0C145F0083B8E3 /* TBTimer.swift */; };
+		87C882C81C0C1F960083B8E3 /* TBTimeDisplayTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882C71C0C1F960083B8E3 /* TBTimeDisplayTestCase.swift */; };
+		87C882CA1C0C1FD30083B8E3 /* TBTimeDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882C91C0C1FD30083B8E3 /* TBTimeDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +39,14 @@
 		87C882991C0BEAEA0083B8E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87C8829E1C0BEAEA0083B8E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C882A31C0BEAEA0083B8E3 /* TimerBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		87C882A71C0BEAEA0083B8E3 /* TimerBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBarTests.swift; sourceTree = "<group>"; };
 		87C882A91C0BEAEA0083B8E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C882AE1C0BEAEA0083B8E3 /* TimerBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C882B21C0BEAEA0083B8E3 /* TimerBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBarUITests.swift; sourceTree = "<group>"; };
 		87C882B41C0BEAEA0083B8E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C882C11C0BEE220083B8E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		87C882C31C0C145F0083B8E3 /* TBTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTimer.swift; sourceTree = "<group>"; };
+		87C882C71C0C1F960083B8E3 /* TBTimeDisplayTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTimeDisplayTestCase.swift; sourceTree = "<group>"; };
+		87C882C91C0C1FD30083B8E3 /* TBTimeDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTimeDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +99,10 @@
 			children = (
 				87C882C01C0BEE220083B8E3 /* MainMenu.xib */,
 				87C882971C0BEAEA0083B8E3 /* AppDelegate.swift */,
+				87C882C31C0C145F0083B8E3 /* TBTimer.swift */,
+				87C882C91C0C1FD30083B8E3 /* TBTimeDisplay.swift */,
 				87C882991C0BEAEA0083B8E3 /* Assets.xcassets */,
 				87C8829E1C0BEAEA0083B8E3 /* Info.plist */,
-				87C882C31C0C145F0083B8E3 /* TBTimer.swift */,
 			);
 			path = TimerBar;
 			sourceTree = "<group>";
@@ -107,7 +110,7 @@
 		87C882A61C0BEAEA0083B8E3 /* TimerBarTests */ = {
 			isa = PBXGroup;
 			children = (
-				87C882A71C0BEAEA0083B8E3 /* TimerBarTests.swift */,
+				87C882C71C0C1F960083B8E3 /* TBTimeDisplayTestCase.swift */,
 				87C882A91C0BEAEA0083B8E3 /* Info.plist */,
 			);
 			path = TimerBarTests;
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C882CA1C0C1FD30083B8E3 /* TBTimeDisplay.swift in Sources */,
 				87C882981C0BEAEA0083B8E3 /* AppDelegate.swift in Sources */,
 				87C882C41C0C145F0083B8E3 /* TBTimer.swift in Sources */,
 			);
@@ -261,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87C882A81C0BEAEA0083B8E3 /* TimerBarTests.swift in Sources */,
+				87C882C81C0C1F960083B8E3 /* TBTimeDisplayTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
