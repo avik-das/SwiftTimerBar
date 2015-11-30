@@ -10,9 +10,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var playPauseMenuItem : NSMenuItem = NSMenuItem()
     var stopMenuItem : NSMenuItem = NSMenuItem()
 
-    var startTime : NSDate = NSDate()
-    var isRunning = false
-    var timer : NSTimer? = nil
+    var timer : TBTimer = TBTimer()
+    var renderTimer : NSTimer? = nil
 
     let iconTextPadding = NSAttributedString(string: " ", attributes: [
         NSFontAttributeName: NSFont(name: "Courier", size: 6)!])
@@ -38,7 +37,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         stopMenuItem.keyEquivalent = ""
         menu.addItem(stopMenuItem)
 
-        reset()
+        rerender()
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
@@ -49,13 +48,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-    func reset() {
-        isRunning = false
-        rerender()
-    }
-
     func getElapsedTimeDisplay() -> String {
-        let elapsedTime  = lround(NSDate().timeIntervalSinceDate(startTime))
+        let elapsedTime  = lround(timer.elapsedSeconds)
         let minutes = elapsedTime / 60
         let seconds = elapsedTime % 60
 
@@ -75,45 +69,58 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func rerender() {
-        if (isRunning) {
-            statusBarItem.button?.attributedTitle = titleString(getElapsedTimeDisplay())
-            playPauseMenuItem.title = "Pause"
-            playPauseMenuItem.enabled = false  // TODO: no pause support
-            stopMenuItem.enabled = true
-        } else {
-            statusBarItem.button?.attributedTitle = titleString("00:00")
+        statusBarItem.button?.attributedTitle = titleString(getElapsedTimeDisplay())
+
+        switch (timer.status) {
+        case .Stopped:
             playPauseMenuItem.title = "Start"
-            playPauseMenuItem.enabled = true  // TODO: no pause support
             stopMenuItem.enabled = false
+        case .Running:
+            playPauseMenuItem.title = "Pause"
+            stopMenuItem.enabled = true
+        case .Paused:
+            playPauseMenuItem.title = "Resume"
+            stopMenuItem.enabled = true
         }
     }
 
     func onPlayPauseClicked() {
-        if (isRunning) {
-            // TODO: won't happen for now, no pause support
-        } else {
-            startTime = NSDate()
-            isRunning = true
-
-            timer = NSTimer(
-                timeInterval: 1.0,
-                target: self,
-                selector: "rerender",
-                userInfo: nil,
-                repeats: true
-            )
-            NSRunLoop.currentRunLoop().addTimer(timer!, forMode: NSRunLoopCommonModes)
+        switch (timer.status) {
+        case .Stopped:
+            timer.start()
+            startRenderTimer()
+        case .Running:
+            timer.pause()
+            stopRenderTimer()
+        case .Paused:
+            timer.resume()
+            startRenderTimer()
         }
 
         rerender()
     }
 
     func onStopClicked() {
-        isRunning = false
-        timer?.invalidate()
-        timer = nil
+        timer.stop()
+        stopRenderTimer()
 
         rerender()
+    }
+
+    func startRenderTimer() {
+        renderTimer = NSTimer(
+            timeInterval: 1.0,
+            target: self,
+            selector: "rerender",
+            userInfo: nil,
+            repeats: true
+        )
+        NSRunLoop.currentRunLoop().addTimer(renderTimer!, forMode: NSRunLoopCommonModes)
+    }
+
+    func stopRenderTimer() {
+        renderTimer?.invalidate()
+        renderTimer = nil
     }
 
 }
