@@ -22,6 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let buttonImage = NSImage(named: "timer")
         buttonImage?.size = CGSize(width: 12, height: 12)
+        buttonImage?.template = true
         statusBarItem.button?.image = buttonImage
         statusBarItem.button?.alternateImage = buttonImage
         statusBarItem.button?.imagePosition = NSCellImagePosition.ImageLeft
