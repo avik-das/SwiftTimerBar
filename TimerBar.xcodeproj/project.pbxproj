@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		87C882981C0BEAEA0083B8E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882971C0BEAEA0083B8E3 /* AppDelegate.swift */; };
 		87C8829A1C0BEAEA0083B8E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87C882991C0BEAEA0083B8E3 /* Assets.xcassets */; };
-		87C8829D1C0BEAEA0083B8E3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C8829B1C0BEAEA0083B8E3 /* MainMenu.xib */; };
 		87C882A81C0BEAEA0083B8E3 /* TimerBarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882A71C0BEAEA0083B8E3 /* TimerBarTests.swift */; };
 		87C882B31C0BEAEA0083B8E3 /* TimerBarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C882B21C0BEAEA0083B8E3 /* TimerBarUITests.swift */; };
+		87C882C21C0BEE220083B8E3 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87C882C01C0BEE220083B8E3 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +35,6 @@
 		87C882941C0BEAEA0083B8E3 /* TimerBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C882971C0BEAEA0083B8E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87C882991C0BEAEA0083B8E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		87C8829C1C0BEAEA0083B8E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		87C8829E1C0BEAEA0083B8E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87C882A31C0BEAEA0083B8E3 /* TimerBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C882A71C0BEAEA0083B8E3 /* TimerBarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBarTests.swift; sourceTree = "<group>"; };
@@ -43,6 +42,7 @@
 		87C882AE1C0BEAEA0083B8E3 /* TimerBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TimerBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C882B21C0BEAEA0083B8E3 /* TimerBarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerBarUITests.swift; sourceTree = "<group>"; };
 		87C882B41C0BEAEA0083B8E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87C882C11C0BEE220083B8E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,9 +93,9 @@
 		87C882961C0BEAEA0083B8E3 /* TimerBar */ = {
 			isa = PBXGroup;
 			children = (
+				87C882C01C0BEE220083B8E3 /* MainMenu.xib */,
 				87C882971C0BEAEA0083B8E3 /* AppDelegate.swift */,
 				87C882991C0BEAEA0083B8E3 /* Assets.xcassets */,
-				87C8829B1C0BEAEA0083B8E3 /* MainMenu.xib */,
 				87C8829E1C0BEAEA0083B8E3 /* Info.plist */,
 			);
 			path = TimerBar;
@@ -224,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87C8829A1C0BEAEA0083B8E3 /* Assets.xcassets in Resources */,
-				87C8829D1C0BEAEA0083B8E3 /* MainMenu.xib in Resources */,
+				87C882C21C0BEE220083B8E3 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,10 +285,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		87C8829B1C0BEAEA0083B8E3 /* MainMenu.xib */ = {
+		87C882C01C0BEE220083B8E3 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				87C8829C1C0BEAEA0083B8E3 /* Base */,
+				87C882C11C0BEE220083B8E3 /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
